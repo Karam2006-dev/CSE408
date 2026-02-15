@@ -1,19 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-int x;// global variable for comparator function
+int target; // global variable for comparator function
 
 int compare(const void *a,const void *b){
     int valA=*(const int *)a;
     int valB=*(const int *)b;
-    int diff1=abs(valA-x);
-    int diff2=abs(valB-x);
+    int diff1=abs(valA-target);
+    int diff2=abs(valB-target);
     if(diff1==diff2){
         return valA-valB;
     }
     return diff1-diff2;
 } 
-void printKcloset(int arr[],int n,int k,int x,int result[]){
+void printKcloset(int arr[],int n,int k,int key,int result[]){
+    target = key;
     qsort(arr,n,sizeof(int),compare);
     for(int i=0;i<k;i++){
         result[i]=arr[i];
