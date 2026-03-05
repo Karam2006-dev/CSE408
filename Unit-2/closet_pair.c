@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<math.h>
 int target; // global variable for comparator function
-
 int compare(const void *a,const void *b){
     int valA=*(const int *)a;
     int valB=*(const int *)b;

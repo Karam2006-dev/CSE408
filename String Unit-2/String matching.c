@@ -3,18 +3,21 @@
 #include<stdlib.h>
 #include<stdbool.h>
 bool rotateString(char *s, char *goal){
-    int len1 = strlen(s);
-    int len2 = strlen(goal);
+    size_t len1 = strlen(s);
+    size_t len2 = strlen(goal);
     if(len1 != len2) return false;
-    char *temp = (char*)malloc(sizeof(char)*(len1*2+1));
+    char *temp = malloc(len1 * 2 + 1);
+    if(!temp) return false;
     strcpy(temp, s);
     strcat(temp, s);
-    if(strstr(temp, goal)!=NULL) return true;
-    return false;
+    bool found = (strstr(temp, goal) != NULL);
+    free(temp);
+    return found;
 }
 int main(){
-    int s="abcde";
-    int goal="cdeab";
+    char s[] = "abcde";
+    char goal[] = "cdeab";
     if(rotateString(s, goal)) printf("true");
     else printf("false");
+    return 0;
 }
