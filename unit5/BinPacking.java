@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class BinPacking {
     static class Bin {
         int capacity;
@@ -30,7 +29,7 @@ public class BinPacking {
                     break;
                 }
             }
-            if (!placed) {
+            if (!placed) { 
                 Bin newBin = new Bin(binCapacity);
                 newBin.addItem(item);
                 bins.add(newBin);

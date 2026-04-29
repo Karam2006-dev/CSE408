@@ -6,6 +6,7 @@ public class bfs {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(minPerfectSquares(n));
+        sc.close();
     }
 
     public static int minPerfectSquares(int n) {
