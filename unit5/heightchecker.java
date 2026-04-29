@@ -8,7 +8,7 @@ class Solution {
         for(int i=0;i<heights.length;i++){
             if(heights[i]!=expected[i])
             count++;
-        }
+        }    
         return count;
     }
     public static void main(String[] args) {
